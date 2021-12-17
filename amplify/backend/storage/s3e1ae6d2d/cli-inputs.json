@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3e1ae6d2d",
+  "policyUUID": "e1ae6d2d",
+  "bucketName": "videocourse22d810f20ad640ee852a6bf51c9c5813",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -1,0 +1,31 @@
+.total-courses {
+    h1 {
+        padding-left: 5%;
+    }
+    .specific-course {
+        max-width: 100vw;
+        // height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        // grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "title desc . button";
+        gap: 0px;
+        padding: 5%;
+        
+        .title {
+            grid-area: title;
+            // margin-top: 5%;
+            display: flex;            /* new */
+            align-items: center;      /* new */
+        }
+        .desc {
+            grid-area: desc;
+        }
+        .delete-course-btn {
+            grid-area: button;
+            cursor: pointer;
+            // visibility: hidden;
+        }
+    }
+}

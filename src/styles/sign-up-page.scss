@@ -1,0 +1,102 @@
+.sign-up-details {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header header"
+        ". title . ."
+        ". username username ."
+        ". password password ."
+        ". email email ."
+        ". . buttonf ."
+        ". . buttons ."
+        "footer footer footer footer";
+    
+    gap: 0px;
+    input {
+        height: 40%;
+        text-indent: 5px;
+        // grid-area: main;
+    }
+  
+    h2 {
+        font-family: 'Roboto', Helvetica, sans-serif;
+        grid-area: title;
+        align-items: end;
+    }
+  
+    .username {
+        grid-area: username;
+    }
+    .password {
+        grid-area: password;
+    }
+
+    .email {
+        grid-area: email;
+    }
+  
+    .sign-in-btn {
+        height: 40%;
+        grid-area: footer;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: medium;
+        color: rgb(238, 124, 238);
+    }
+  
+    .sign-up-btn {
+        height: 40%;
+        grid-area: buttonf;
+        cursor: pointer;
+    }
+  
+  
+    h3 {
+        font-family: 'Roboto', Helvetica, sans-serif;
+        text-align: left;
+        grid-area: footer;
+        text-align: center;
+    }
+}
+
+.confirm-sign-up {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header header"
+        ". title . ."
+        ". auth auth ."
+        ". . button ."
+        ". . . ."
+        ". . . ."
+        "footer footer footer footer";
+    
+    gap: 0px;
+    input {
+        height: 40%;
+        text-indent: 5px;
+        // grid-area: main;
+    }
+  
+    h2 {
+        font-family: 'Roboto', Helvetica, sans-serif;
+        grid-area: title;
+        align-items: end;
+    }
+    
+    .auth-code {
+        grid-area: auth;
+    }
+    .confirm-sign-up-btn {
+        height: 40%;
+        grid-area: button;
+        cursor: pointer;
+    }
+}

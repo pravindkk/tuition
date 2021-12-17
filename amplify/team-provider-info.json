@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-videocourse-staging-55921-authRole",
+      "UnauthRoleArn": "arn:aws:iam::880624679696:role/amplify-videocourse-staging-55921-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::880624679696:role/amplify-videocourse-staging-55921-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-videocourse-staging-55921-deployment",
+      "UnauthRoleName": "amplify-videocourse-staging-55921-unauthRole",
+      "StackName": "amplify-videocourse-staging-55921",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:880624679696:stack/amplify-videocourse-staging-55921/51ffe940-597e-11ec-ab2c-02d507eca7aa",
+      "AmplifyAppId": "d3mytxkko3ip54"
+    },
+    "categories": {
+      "auth": {
+        "videocourse": {}
+      }
+    }
+  }
+}
