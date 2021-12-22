@@ -17,6 +17,7 @@ export default function VideoForm(props) {
         const user = await Auth.currentAuthenticatedUser();
         const groups = user.signInUserSession.accessToken.payload["cognito:groups"];
         if (groups === undefined) {
+            window.history.go(-1)
             return;
         }
         if (groups.includes('admin') === true) {

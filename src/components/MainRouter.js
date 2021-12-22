@@ -10,6 +10,8 @@ import SpecificCourse from './SpecificCourse'
 import AddCourse from './course-components/AddCourse'
 import UpdateUserCourse from "./course-components/UpdateUserCourse"
 
+import VideoForm from "./VideoForm"
+
 
 const MainRouter = () => {
 
@@ -43,10 +45,11 @@ const MainRouter = () => {
                 <Route path="/courses/:id">
                     <SpecificCourse />
                 </Route>
-                <Route path="/add-course" component={AddCourse} />
-                <Route path="/update-courses">
-                    <UpdateUserCourse />
+                <Route path="/add-video/:id">
+                    <VideoForm />
                 </Route>
+                <Route path="/add-course" component={AddCourse} />
+                <Route path="/update-courses" component={UpdateUserCourse} />
             </BrowserRouter>
             
         </div>

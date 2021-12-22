@@ -35,7 +35,7 @@ const Courses = () => {
     
     return(
         <div className="total-courses">
-            <h1>Video Courses</h1>
+            <h1>Courses</h1>
             <div className="specific-course" style={{
                 paddingTop: 0
             }}>
