@@ -1,5 +1,5 @@
 import { DataStore } from "@aws-amplify/datastore"
-import { Course } from '../models'
+import { Course } from '../../models'
 import { useState, useEffect } from "react"
 import { Auth } from "aws-amplify"
 
@@ -11,7 +11,7 @@ const AddCourse = () => {
         const checkUser = async() => {
             const user = await Auth.currentAuthenticatedUser();
             const groups = user.signInUserSession.accessToken.payload["cognito:groups"];
-            if (groups.includes('admin') === false) {
+            if (groups === undefined) {
                 window.history.go(-1);
             }
         }
@@ -22,9 +22,9 @@ const AddCourse = () => {
         try {
             const course = await DataStore.save(
                 new Course({
-                    "title": title,
-                    "description": description,
-                    "videos": []
+                    title,
+                    description,
+                    videos:[]
                 })
             )
             console.log(course);
@@ -34,12 +34,19 @@ const AddCourse = () => {
         }
     }
 
+    const previousPage = () => {
+        window.history.go(-1);
+    }
+
     return(
-        <div>
-            <h2>Add Course</h2>
-            <input type="text" placeholder="Title" onChange={e => setTitle(e.target.value)} />
-            <input type="text" placeholder="Description" onChange={e => setDescription(e.target.value)} />
-            <button onClick={addCourse}>Submit</button>
+        <div className="add-courses-page">
+            <div className="add-courses-component">
+                <h2 className="header">Add Course</h2>
+                <input className="title" type="text" placeholder="Title" onChange={e => setTitle(e.target.value)} />
+                <input className="desc" type="text" placeholder="Description" onChange={e => setDescription(e.target.value)} />
+                <button className="previous-btn" onClick={previousPage}>Cancel</button>
+                <button className="add-course-btn" onClick={addCourse}>Submit</button>
+            </div>
             
         </div>
     )

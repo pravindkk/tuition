@@ -1,3 +1,9 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String!
+  courses: [String!]
+}
+
 type Video @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!

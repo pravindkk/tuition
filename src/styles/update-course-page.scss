@@ -1,0 +1,148 @@
+.update-courses-page {
+    height: 100vh;
+    background-image: url(../assets/login-background.svg);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header header"
+        ". login login ."
+        ". login login ."
+        "footer footer footer footer";
+    
+    gap: 0px;
+
+    .update-courses-component {
+        grid-area: login;
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 2rem;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header"
+            "second"
+            "third"
+            "button";
+
+        h2 {
+            grid-area: header;
+            justify-self: center;
+            align-self: center;
+            font-size: 2.5rem;
+        }
+
+        .select-courses {
+            grid-area: second;
+            height: 3em;
+            width: 40%;
+            justify-self: left;
+            align-self: center;
+            margin-left: 2em;
+        }
+
+        .get-courses-btn {
+            grid-area: second;
+            height: 3em;
+            width: 40%;
+            justify-self: right;
+            align-self: center;
+            margin-right: 2em;
+
+            border: 2px solid;
+            background-color: #09659b;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: #09659b;
+            color: #fff;
+            border-radius: 30px;
+            width: 10em;
+        }
+
+        .all-course-list{
+            grid-area: third;
+            display: grid;
+            .select-courses-list {
+                padding-bottom: 1em;
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+
+                .select-courses-checkbox {
+                    align-self: center;
+                    justify-self: right;
+                }
+                h3 {
+                    align-self: center;
+                    justify-self: left;
+                    padding-left: 0.5em;
+                    font-weight:normal
+                }
+            }
+
+        }
+
+        .update-btn {
+            grid-area: button;
+            justify-self: center;
+            align-self: center;
+            border: 2px solid;
+            background-color: #09659b;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: #09659b;
+            color: #fff;
+            border-radius: 30px;
+
+            align-self: center;
+            justify-self: right;
+            margin-right: 1em;
+            
+            width: 12em;
+        }
+
+        .cancel-btn {
+            grid-area: button;
+            justify-self: center;
+            align-self: center;
+            border: 2px solid;
+            background-color: #09659b;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: #09659b;
+            color: #fff;
+            border-radius: 30px;
+
+            align-self: center;
+            justify-self: left;
+            margin-left: 1em;
+
+            width: 12em;
+        }
+        // .select-courses {
+        //     grid-area: second;
+        // }
+
+        // .get-courses-btn {
+        //     grid-area: second;
+        // }
+
+        // .select-courses-list {
+        //     grid-area: third;
+        // }
+
+        // .select-courses-checkbox {
+        //     padding-bottom: 1em;
+        // }
+
+        // .btn {
+        //     grid-area: button;
+        // }
+
+
+    }
+}

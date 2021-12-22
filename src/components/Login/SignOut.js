@@ -12,7 +12,7 @@ const SignOut = () => {
     const checkUser = async() => {
         try {
             const user = await Auth.currentAuthenticatedUser();
-            console.log(user);
+            // console.log(user);
             setUsername(user.username)
             return true;
         } catch(err) {

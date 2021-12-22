@@ -14,7 +14,7 @@ const Video = (props) => {
     })
 
     return(
-        <video src={videoLink} controls/>
+        <video src={videoLink} controls playsInline/>
     )
 }
 

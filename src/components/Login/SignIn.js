@@ -24,16 +24,16 @@ const SignIn = () => {
     const handleSignIn = async () => {
         try {
             const user = await Auth.signIn(username, password)
-                    // window.location.pathname = "/home"
-                .catch(err => console.log(err))
+            window.location.pathname = "/home"
             console.log(user);
             updateUser(user)
+        } catch(err) {
+            console.log(err);
+        }
+            
             window.location.pathname = "/home"
 
             
-        } catch (error) {
-            console.log('error signing in', error);
-        }
     }
 
     const handleSignUp = () => {
@@ -42,25 +42,28 @@ const SignIn = () => {
 
     return(
         <div className='login-details'>
-            <h2>Login</h2>
-            <input 
-                type="text" 
-                placeholder='Username' 
-                onChange={e => setUsername(e.target.value)} 
-                className='username'
-            />
-            <input 
-                type="text" 
-                placeholder='Password' 
-                onChange={e => setPassword(e.target.value)} 
-                className='password'
-            />
-            <button 
-                className='sign-in-btn'
-                onClick={handleSignIn}
-            >
-                Sign In
-            </button>
+            <h2>tuiBot</h2>
+            <div className='sign-in-form'>
+                <h4>Login</h4>
+                <input 
+                    type="text" 
+                    placeholder='Username' 
+                    onChange={e => setUsername(e.target.value)} 
+                    className='username'
+                />
+                <input 
+                    type="text" 
+                    placeholder='Password' 
+                    onChange={e => setPassword(e.target.value)} 
+                    className='password'
+                />
+                <button 
+                    className='sign-in-btn'
+                    onClick={handleSignIn}
+                >
+                    Sign In
+                </button>
+            </div>
             <h3>Dont have a account? 
             <button 
                 className='sign-up-btn'

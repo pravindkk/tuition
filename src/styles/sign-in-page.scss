@@ -3,41 +3,133 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
         "header header header header"
-        ". title . ."
-        ". username username ."
-        ". password password ."
-        ". . buttonf ."
-        ". . . ."
-        ". . buttons ."
+        ". login login ."
+        ". login login ."
         "footer footer footer footer";
     
     gap: 0px;
-    input {
-        height: 40%;
-        text-indent: 5px;
-        // grid-area: main;
-    }
-  
+
+    background-image: url(../assets/login-background.svg);
     h2 {
-        font-family: 'Roboto', Helvetica, sans-serif;
-        grid-area: title;
-        align-items: end;
+        grid-area: header;
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 50px;
+        align-self: center;
     }
-  
-    .username {
-        grid-area: username;
-    }
-    .password {
-        grid-area: password;
-    }
-  
-    .sign-in-btn {
-        height: 40%;
-        grid-area: buttonf;
-        cursor: pointer;
+
+    .sign-in-form {
+        grid-area: login;
+        background-color: rgba(255, 255, 255, 0.836);
+        border-radius: 30px;
+        padding: 5%;
+
+        display: grid;
+        grid-template-rows: 1fr 2fr 2fr 2fr;
+
+        h4 {
+            justify-self:center;
+            font-size: larger;
+        }
+
+        input {
+            height: 40%;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-color: #000000;
+            text-align: center;
+            width: 60%;
+            align-self: center;
+            justify-self:center;
+            font-size: 1rem;
+
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input:focus::placeholder {
+            color: transparent;
+        }
+
+        ::placeholder {
+            color: #555555;
+        }
+
+        .username {
+            // grid-area: username;
+            background-color: transparent;
+            color: #555555;
+        }
+        .password {
+            // grid-area: password;
+            background-color: transparent;
+            color: #555555;
+        }
+
+        .sign-in-btn {
+            height: 40%;
+            cursor: pointer;
+            background-color: rgb(113, 160, 42);
+            color: #ffffff;
+            border: 0;
+            width: 60%;
+            margin: auto;
+            display: block;
+        }
+
+        // input {
+        //     height: 40%;
+        //     text-indent: 5px;
+        //    border-top-style: hidden;
+            // border-right-style: hidden;
+            // border-left-style: hidden;
+            // border-bottom-style: groove;
+            // border-color: #000000;
+            // text-align: center;
+            // width: 60%;
+        //     margin: auto;
+        //     display: block;
+        //     // grid-area: main;
+        // }
+        // input:focus {
+        //     outline: none;
+        // }
+        
+    
+        // h4 {
+        //     font-family: 'Roboto', Helvetica, sans-serif;
+        //     grid-area: title;
+        //     align-items: end;
+        //     text-align: center;
+        //     margin-top: 50px;
+        // }
+
+        
+    
+        
+
+        // ::placeholder {
+        //     color: #555555;
+        // }
+    
+        // .sign-in-btn {
+        //     height: 40%;
+        //     grid-area: buttonf;
+        //     cursor: pointer;
+        //     background-color: rgb(113, 160, 42);
+        //     color: #ffffff;
+        //     border: 0;
+        //     width: 60%;
+        //     margin: auto;
+        //     display: block;
+        // }
     }
   
     .sign-up-btn {
@@ -48,14 +140,15 @@
       border: none;
       cursor: pointer;
       font-size: medium;
-      color: rgb(238, 124, 238);
+      color: rgb(113, 160, 42);
     }
-  
   
     h3 {
         font-family: 'Roboto', Helvetica, sans-serif;
-        text-align: left;
+        text-align: center;
         grid-area: footer;
         text-align: center;
+        color: #fff;
+        align-self: end;
     }
   }

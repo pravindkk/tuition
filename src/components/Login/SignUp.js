@@ -1,6 +1,8 @@
 import { Auth } from 'aws-amplify';
 
 import { useState, useEffect } from 'react';
+import { DataStore } from '@aws-amplify/datastore';
+import { User } from '../../models';
 
 const SignUp = () => {
     const [username, setUsername] = useState('')
@@ -19,12 +21,28 @@ const SignUp = () => {
             alert("Empty Fields")
             return;
         }
-        await Auth.signUp({ username, password, attributes: { email }})
+        await Auth.signUp({ 
+            username, 
+            password, 
+            attributes: { 
+                email,
+            }
+        })
         setFormType('confirmSignUp')
     }
 
     const confirmSignUp = async() => {
         await Auth.confirmSignUp(username, authCode)
+        try {
+            const user = await DataStore.save(
+                new User({
+                    username,
+                    courses: []
+                })
+            );
+        } catch(err) {
+
+        }
         window.location.pathname = "/login"
     }
 
@@ -37,31 +55,34 @@ const SignUp = () => {
             {
             formType === 'signUp' && (
                 <div className='sign-up-details'>
-                    <h2>Sign Up</h2>
-                    <input 
-                        type="text" 
-                        placeholder='Username' 
-                        onChange={e => setUsername(e.target.value)} 
-                        className='username'
-                    />
-                    <input 
-                        type="text" 
-                        placeholder='Password' 
-                        onChange={e => setPassword(e.target.value)}
-                        className='password' 
-                    />
-                    <input 
-                        type="text" 
-                        placeholder='Email' 
-                        onChange={e => setEmail(e.target.value)} 
-                        className='email'
-                    />
-                    <button 
-                        onClick={handleSignUp}
-                        className='sign-up-btn'
-                    >
-                        Sign Up
-                    </button>
+                    <h2>tuiBot</h2>
+                    <div className='sign-up-form'>
+                        <h4>Sign Up</h4>
+                        <input 
+                            type="text" 
+                            placeholder='Username' 
+                            onChange={e => setUsername(e.target.value)} 
+                            className='username'
+                        />
+                        <input 
+                            type="text" 
+                            placeholder='Password' 
+                            onChange={e => setPassword(e.target.value)}
+                            className='password' 
+                        />
+                        <input 
+                            type="text" 
+                            placeholder='Email' 
+                            onChange={e => setEmail(e.target.value)} 
+                            className='email'
+                        />
+                        <button 
+                            onClick={handleSignUp}
+                            className='sign-up-btn'
+                        >
+                            Sign Up
+                        </button>
+                    </div>
                     <h3>Already have an account? 
                         <button 
                             onClick={handleSignIn}

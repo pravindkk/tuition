@@ -9,7 +9,15 @@ video {
   width: 100vw;
 }
 
+.main-page{
+  height: 100vh;
+  background-image: url(../assets/login-background.svg);
+  // position: fixed;
+}
+
 @import './sign-in-page.scss';
 @import './sign-up-page.scss';
 @import './sign-out-component.scss';
 @import './courses-page.scss';
+@import './add-course.scss';
+@import './update-course-page.scss';

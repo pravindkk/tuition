@@ -7,7 +7,8 @@ import SignUp from "./Login/SignUp"
 import MainPage from "./MainPage"
 
 import SpecificCourse from './SpecificCourse'
-import AddCourse from './AddCourse'
+import AddCourse from './course-components/AddCourse'
+import UpdateUserCourse from "./course-components/UpdateUserCourse"
 
 
 const MainRouter = () => {
@@ -43,6 +44,9 @@ const MainRouter = () => {
                     <SpecificCourse />
                 </Route>
                 <Route path="/add-course" component={AddCourse} />
+                <Route path="/update-courses">
+                    <UpdateUserCourse />
+                </Route>
             </BrowserRouter>
             
         </div>

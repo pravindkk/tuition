@@ -5,7 +5,7 @@ import Courses from "./Courses"
 
 const MainPage = () => {
     return(
-        <div>
+        <div className="main-page">
             <SignOut />
             <Courses />
             {/* <App /> */}
