@@ -6,7 +6,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import { useEffect, useState } from 'react';
 
 
-import VideoForm from './components/VideoForm'
+import VideoForm from './components/specific-course-components/VideoForm'
 
 function App() {
   const [courses, setCourses] = useState([])

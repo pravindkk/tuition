@@ -1,6 +1,6 @@
 import { DataStore, Auth } from "aws-amplify";
 import React from "react";
-import { Course, User } from "../models";
+import { Course, User } from "../../models";
 import { Link } from "react-router-dom"
 
 class ShowCourses extends React.Component {

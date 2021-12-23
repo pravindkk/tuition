@@ -1,0 +1,94 @@
+.specific-course-list {
+    background-image: url('../assets/login-background.svg');
+    height: 100vh;
+    display: grid;
+    .course-navbar {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        background-color: rgba(0, 0, 0, 0.616);
+        height: 4rem;
+
+        h2 {
+            color: #fff;
+            justify-self: left;
+            align-self: center;
+            margin-left: 2em;
+        }
+
+        button {
+            justify-self: right;
+            align-self: center;
+            border: 2px solid;
+            background-color: #09659b;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: #09659b;
+            color: #fff;
+            border-radius: 30px;
+            width: 10em;
+
+            margin-right: 2em;
+        }
+    }
+
+    .video-component {
+        max-width: 100vw;
+        display: grid;
+        grid-template-rows: 1fr 6fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "second"
+            "third"
+            "button";
+
+        background-color: rgba(255, 255, 255, 0.74);
+        border-radius: 30px;
+        padding: 2em;
+        margin: 2em;
+
+        h1 {
+            font-weight: normal;
+            align-self: center;
+            justify-self: left;
+            margin-right: 2em;
+            grid-area: header;
+        }
+
+        video {
+            width: 90%;
+            align-self: center;
+            justify-self: center;
+            grid-area: second;
+        }
+        button {
+            grid-area: button;
+            align-self: center;
+
+            border: 2px solid;
+            background-color: #09659b;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-color: #09659b;
+            color: #fff;
+            border-radius: 30px;
+    
+            
+
+        }
+
+        .backwards {
+            justify-self: left;
+        }
+
+        .forwards {
+            justify-self: right;
+        }
+
+    }
+}

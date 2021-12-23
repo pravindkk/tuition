@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { DataStore } from '@aws-amplify/datastore';
 import { Storage, Auth } from "aws-amplify";
-import { Video } from '../models';
+import { Video } from '../../models';
 
 
 export default function VideoForm(props) {

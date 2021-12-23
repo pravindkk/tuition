@@ -1,7 +1,7 @@
-import SignOut from "./Login/SignOut"
+import SignOut from "./login/SignOut"
 // import App from '../App'
 
-import Courses from "./Courses"
+import Courses from "./course-components/Courses"
 
 const MainPage = () => {
     return(

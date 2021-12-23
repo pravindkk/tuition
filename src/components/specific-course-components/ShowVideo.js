@@ -26,43 +26,28 @@ function ShowVideoComponent({ names }) {
 
 
   return (
-    <div className="App">
-        {/* {names.length !== 0 && names[index].courseID === params.id && (
-            <div>
-                <h1>{names[index].title}</h1>
-
-                <button onClick={backwards}>Backwards</button>
-                <button onClick={forwards}>Forwards</button>
-            </div>
-            
-        )} */}
+    <>
         {names.length !== 0 
             ? (names[index].courseID === params.id) 
-                ? <div>
+                ? <div className="video-component">
                     <h1>{names[index].title}</h1>
                     <VideoView videoId={names[index].id} />
 
-                    <button onClick={backwards}>Backwards</button>
-                    <button onClick={forwards}>Forwards</button>
+                    <button className="backwards" onClick={backwards}>Backwards</button>
+                    <button className="forwards" onClick={forwards}>Forwards</button>
                 </div>
-                : <div>
-                    <button onClick={backwards}>Backwards</button>
-                    <button onClick={forwards}>Forwards</button>
+                : <div className="video-component">
+                    <button className="backwards" onClick={backwards}>Backwards</button>
+                    <button className="forwards" onClick={forwards}>Forwards</button>
                 </div>
-            : <div>hello</div>
+            : <div className="video-component" />
         }
         {/* hello
       <h1>{names[index].title}</h1> */}
       
-    </div>
+    </>
   );
 }
-
-// export default ShowVideo
-
-// import React, { useState, useCallback } from "react";
-
-// const mod = (n, m) => ((n % m) + m) % m;
 
 class ShowVideo extends React.Component {
     constructor(props) {
@@ -83,16 +68,7 @@ class ShowVideo extends React.Component {
                 data: 1
             })
         }, 500);
-        // const [index, setIndex] = useState(0);
-        // console.log(index);
 
-        // const forwards = useCallback(() => 
-        //     setIndex(state => mod(state + 1, this.props.names.length))
-        // , [setIndex, this.propsnames]);
-        
-        // const backwards = useCallback(() => 
-        //     setIndex(state => mod(state - 1, this.props.names.length))
-        // , [setIndex, names]);
     }
 
 

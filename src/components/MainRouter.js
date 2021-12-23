@@ -2,15 +2,15 @@ import { BrowserRouter, Route } from "react-router-dom"
 import { useEffect } from "react"
 import { Auth } from "aws-amplify"
 
-import SignIn from "./Login/SignIn"
-import SignUp from "./Login/SignUp"
+import SignIn from "./login/SignIn"
+import SignUp from "./login/SignUp"
 import MainPage from "./MainPage"
 
-import SpecificCourse from './SpecificCourse'
+import SpecificCourse from './specific-course-components/SpecificCourse'
 import AddCourse from './course-components/AddCourse'
 import UpdateUserCourse from "./course-components/UpdateUserCourse"
 
-import VideoForm from "./VideoForm"
+import VideoForm from "./specific-course-components/VideoForm"
 
 
 const MainRouter = () => {

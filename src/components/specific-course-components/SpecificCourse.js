@@ -1,22 +1,16 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { DataStore } from "aws-amplify";
-import { Link } from "react-router-dom";
+import CourseNavBar from "./CourseNavbar";
 
-import { Video } from '../models'
-
-import VideoForm from './VideoForm'
-import VideoView from './Video'
+import { Video } from '../../models'
 
 import ShowVideo from "./ShowVideo";
 
 const SpecificCourse = () => {
     const params = useParams();
-    // console.log(params);
 
-    // const [courses, setCourses] = useState([])
     const [videos, setVideo] = useState([])
-    // const [videoFile, setVideoFile] = useState('')
 
     useEffect(() => {
         const pullData = async () => {
@@ -38,12 +32,9 @@ const SpecificCourse = () => {
 
 
     return(
-        <div>
-            <h2>{params.id}</h2>
-            <Link to={`/add-video/${params.id}`}>Add Video</Link>
+        <div className="specific-course-list">
+            <CourseNavBar id={params.id}/>
             <ShowVideo names={videos} />
-            
-            
         </div>
     )
 }
